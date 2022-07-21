@@ -1,8 +1,7 @@
 const express = require('express');
+const controller = require('../controllers/user');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('this is user api');
-});
+router.get('/', controller.getUsers);
 
 module.exports = router;
