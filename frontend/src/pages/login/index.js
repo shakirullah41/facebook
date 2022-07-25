@@ -1,12 +1,19 @@
 import './style.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import LoginInput from '../../components/inputs/loginInputs';
+const loginCreds = { email: '', password: '' };
 export default function Login() {
+  const [login, setLogin] = useState(loginCreds);
+  const { email, password } = login;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLogin({ ...login, [name]: value });
+  };
   return (
     <div className='main'>
-      <div class='login'>
+      <div className='login'>
         <div className='login_wrapper'>
           <div className='login_1'>
             <img src='../../icons/facebook.svg' alt='' />
@@ -16,11 +23,27 @@ export default function Login() {
           </div>
           <div className='login_2'>
             <div className='login_2_wrap'>
-              <Formik>
+              <Formik
+                enableReinitialize
+                initialValues={{
+                  email,
+                  password,
+                }}
+              >
                 {(formik) => (
                   <Form>
-                    <LoginInput placeholder='Email address or phone number' />
-                    <LoginInput placeholder='Password' />
+                    <LoginInput
+                      type='text'
+                      name='email'
+                      placeholder='Email address or phone number'
+                      onChange={handleChange}
+                    />
+                    <LoginInput
+                      name='password'
+                      type='password'
+                      placeholder='Password'
+                      onChange={handleChange}
+                    />
                     <button type='submit' className='blue_btn'>
                       Log In
                     </button>
