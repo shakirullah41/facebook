@@ -81,7 +81,7 @@
 @media screen and (min-width: 950px) {
   .login_wrapper {
     display: flex;
-    width: 980px;
+    width: 1000px;
     margin: 0 auto;
     padding-top: 101px;
   }

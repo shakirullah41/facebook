@@ -70,3 +70,25 @@
   position: absolute;
   top: -9px;
 }
+
+@media screen and (min-width: 950px) {
+  .input_error {
+    position: absolute;
+    left: -23.7rem;
+    background: #b94a48;
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  .error_arrow_top {
+    border-top: 10px solid transparent;
+    border-left: 10px solid #b94a48;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    right: -20px;
+    bottom: 11px;
+  }
+}
