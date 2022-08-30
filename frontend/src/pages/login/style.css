@@ -28,7 +28,7 @@
   width: 400px;
   flex-direction: column;
   align-items: center;
-  box-shadow: 1px 1px 2px var(--shadow-1);
+  box-shadow: 0 5px 10px 0 var(--shadow-1);
   padding: 1rem;
   height: fit-content;
   border-radius: 7px;
@@ -65,7 +65,9 @@
   font-size: 14px;
   font-weight: 500;
 }
-
+.sign_extra {
+  font-size: 14px;
+}
 .green_btn {
   background-color: var(--green-color);
   border: none;
